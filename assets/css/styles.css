@@ -80,7 +80,7 @@ body {
     display: grid;
     transition: background var(--speed) var(--easing);
 	
-    overscroll-behavior: none;
+    
 }
 
 
