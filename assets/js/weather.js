@@ -2,9 +2,10 @@ const selectedValue = document.getElementById('parameter');
 const inputBox = document.getElementById('input')
 const openApiUrl = "https://api.weatherapi.com/v1/current.json?key={apiKey}&q={query}&aqi={aqi}"
 const openApiKey = "9fdaa82b3adc4d528ab133939232612"
-var resultBox = document.getElementById('result');
+var resultBox = document.getElementById('temperatureResult');
 var fetchBtn = document.getElementById('getResult');
 const aqiCheck = document.getElementById('aqiCheck');
+const imgIco = document.getElementById('currentConditionIco');
 var fetchRequest;
 var data;
 var lat, lon;
@@ -33,9 +34,11 @@ window.onload = function() {
     
 }
 
+//placeholder text and input box manipulation
 selectedValue.addEventListener('change', (e) => {
     inputBox.value = "";
     resultBox.innerHTML = "";
+    imgIco.src = "";
     aqiCheck.checked = false;
     console.log(e.target.value);
 
@@ -59,6 +62,8 @@ selectedValue.addEventListener('change', (e) => {
     //
 }
 )
+
+//waiting for 2 seconds to get the location of the user
 function resolveAfter2Seconds() {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -67,6 +72,7 @@ function resolveAfter2Seconds() {
     });
   }
 
+  //checking aqi data and fetching data
 fetchBtn.addEventListener("click",async (e) => {
     var showAqi = "no";
     if (aqiCheck.checked){
@@ -99,10 +105,20 @@ fetchBtn.addEventListener("click",async (e) => {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
-            resultBox.innerHTML = data.current.temp_c;
+            //console.log(data);
+            data = data;
+            displayData(data);
+            imgIco.src = data.current.condition.icon
+            
         })
 })
+
+function displayData(data) {
+    console.log(data);
+    resultBox.innerHTML = "Current Temperature: " + data.current.temp_c + "°C \nLast Updated: " + data.current.last_updated;
+}
+
+
 
 
 
