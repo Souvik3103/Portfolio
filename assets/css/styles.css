@@ -141,8 +141,8 @@ nav ul li {
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
-    max-width: 68.75rem;
-    margin: auto;
+    max-width: 100%;
+    /*margin: auto;*/
 }
 
 .hero img {
@@ -211,7 +211,7 @@ nav ul li {
 }
 
 .projects {
-    background-color: var(--bg-color);
+    /*background-color: var(--bg-color);*/
     padding: 32px 0;
     margin-top: 2rem;
 }
@@ -706,19 +706,22 @@ footer {
 
 
 .form span {
-    margin:10px 10px 10px 20px;
+   /* margin:10px 10px 10px 20px;*/
     
 }
 
 .form div {
-    margin:10px 10px 10px 20px;
-    color: var(--color);
+    /*margin:10px 10px 10px 20px;*/
+    color: var(--bg-color);
     align-items: right;
 }
 
 
 
 
+section#about {
+    background:  no-repeat center center/cover;;
+}
 
 
  

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Weather</title>
+  <link rel="stylesheet" href="/assets/css/weather.css" />
+</head>
+<body>
+    <input type="checkbox" id="aqiCheck">
+    
+    <select id="parameter" class="parameter" name="parameter">
+        <option value="currentLocation">Current Location</option>
+        <option value="LatLong" selected>Latitude Longitude</option>
+        <option value="cityName">City Name</option>
+        <option value="airportCode">Airport Code</option>
+    </select>
+    <textarea id="input"></textarea>
+    <button id="getResult">Fetch</button>
+    <textarea id="result"></textarea>
+    <script src="/assets/js/weather.js"></script>
+</body>
