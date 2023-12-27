@@ -2,7 +2,7 @@
 
 /* Variables */
 :root {
-    --font-family: "Roboto", sans-serf;
+    --font-family: termina, sans-serif;
     --normal-font: 400;
     --bold-font: 700;
     --bolder-font: 900;
@@ -28,6 +28,7 @@
 	--bg: hsl(219, 30%, 88%);
 	--bear-speed: 10s;
     --color: hsl(219 30% 20%);
+    
 }
 /* Variables end */
 
@@ -35,11 +36,23 @@ html {
     scroll-behavior: smooth;
 }
 
+p {
+    color: var(--color)
+}
+
+h2 {
+    color: var(--color)
+}
+
 /* CSS Resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.container {
+    overflow: hidden;
 }
 
 ul {
@@ -56,8 +69,8 @@ a:hover {
 }
 
 body {
-    /*font-family: var(--font-family);
-    place-items: center;
+    font-family: var(--font-family);
+    /*place-items: center;
 	--
 	--min-height: 100vh;
 	
@@ -66,8 +79,11 @@ body {
     background: var(--bg-color);
     display: grid;
     transition: background var(--speed) var(--easing);
-	font-family: sans-serif, system-ui;
+	
+    
 }
+
+
 
 nav {
     position: sticky;
@@ -85,14 +101,14 @@ nav {
 }
 
 nav h1 {
-    color: var(--primary-color);
+    color: var(--color);
     font-size: larger;
     font-weight: var(--bolder-font);
-    font: bold 34px/1.4 'Open Sans', arial, sans-serif;
+    font: 44px;
 }
 
 nav a {
-    color: var(--primary-color);
+    color: var(--color);
     transition: var(--transition);
 }
 
@@ -112,7 +128,7 @@ nav ul li {
 }
 
 .burger-menu {
-    color: var(--primary-color);
+    color: var(--color);
     font-size: 2rem;
     border: 0;
     background-color: transparent;
@@ -125,8 +141,8 @@ nav ul li {
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
-    max-width: 68.75rem;
-    margin: auto;
+    max-width: 100%;
+    /*margin: auto;*/
 }
 
 .hero img {
@@ -151,7 +167,7 @@ nav ul li {
 }
 
 .more-about {
-    background-color: var(--bg-color);
+    /*background-color: var(--bg-color);*/
     padding: 1rem 6rem;
 }
 
@@ -186,7 +202,7 @@ nav ul li {
 }
 
 .icon-card {
-    background-color: #fff;
+    background-color: var(--bg-color);
     border-radius: 11px;
     box-shadow: 0 3px 10px var(--secondary-shadow);
     padding: 20px;
@@ -195,7 +211,7 @@ nav ul li {
 }
 
 .projects {
-    background-color: var(--bg-color);
+    /*background-color: var(--bg-color);*/
     padding: 32px 0;
     margin-top: 2rem;
 }
@@ -228,6 +244,7 @@ nav ul li {
 
 .project-title {
     margin-bottom: var(--bottom-margin);
+    color: var(--color);
 }
 
 .project-details {
@@ -235,7 +252,7 @@ nav ul li {
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: var(--background-color);
     border-radius: 11px;
     box-shadow: 0 3px 10px var(--primary-shadow);
     padding: 20px;
@@ -434,13 +451,13 @@ footer {
 	transition-timing-function: cubic-bezier(.2,-0.6,.7,1.6);
 }
 [aria-pressed=false] .stars path {
-	transition-delay: 0s;
+	transition-delay: 1s;
 }
 
 .stars path {
 	transform-box: fill-box;
 	transform-origin: 25% 50%;
-	scale: calc(0.25 + (var(--dark, 0) * 0.75));
+	scale: calc(0.25 + (var(--dark, 0) * 1.75));
 	transition: scale var(--speed) calc(var(--speed) * 0.5) var(--easing);
 }
 
@@ -667,7 +684,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: sans-serif;
+  font-family: var(--font-family);
   color: var(--color);
   transition: color var(--speed) var(--easing);
 }
@@ -686,3 +703,25 @@ footer {
     top: 20%;
     
 }
+
+
+.form span {
+   /* margin:10px 10px 10px 20px;*/
+    
+}
+
+.form div {
+    /*margin:10px 10px 10px 20px;*/
+    color: var(--bg-color);
+    align-items: right;
+}
+
+
+
+
+section#about {
+    background:  no-repeat center center/cover;;
+}
+
+
+ 
